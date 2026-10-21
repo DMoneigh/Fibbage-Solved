@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111014">
+  <title>Fibbage XL — Behind the Bluff</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Fibbage XL home"><span class="brand-symbol">f<span>•</span></span><span>fibbage<span class="xl">XL</span><small>THE INSIDER'S COMPANION</small></span></a>
+      <div class="workspace"><span class="workspace-icon" data-icon="game"></span><div>Fibbage XL <small>Local game archive</small></div><span class="workspace-check" data-icon="chevrons"></span></div>
+      <div class="nav-label">WORKSPACE</div>
+      <nav aria-label="Main navigation">
+        <button class="nav-item active" data-view="overview"><span data-icon="grid"></span>Overview</button>
+        <button class="nav-item" data-view="players"><span data-icon="users"></span>Players<span class="nav-count" id="player-nav-count">0</span></button>
+        <button class="nav-item" data-view="answers"><span data-icon="layers"></span>Truths & lies<span class="nav-count" id="question-nav-count">331</span></button>
+        <button class="nav-item" data-view="activity"><span data-icon="activity"></span>Activity log</button>
+      </nav>
+      <div class="nav-label tools-label">TOOLS</div>
+      <nav aria-label="Tools">
+        <button class="nav-item" id="import-button"><span data-icon="upload"></span>Import session<span class="small-arrow">↗</span></button>
+        <button class="nav-item" id="export-button"><span data-icon="download"></span>Export data</button>
+        <button class="nav-item" data-view="findings"><span data-icon="code"></span>Archive findings</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="shortcut-card"><span class="shortcut-icon" data-icon="command"></span><strong>Your backstage pass.</strong><p>Open the quick mod menu<br>from anywhere in this app.</p><button id="sidebar-menu">Press <kbd>F6</kbd> to toggle <span>↗</span></button></div>
+        <div class="local-status"><span class="status-dot"></span><div>Archive loaded<small>No live game attached</small></div><span data-icon="shield"></span></div>
+        <div class="sidebar-footer">BUILT FOR THE CURIOUS <span>v1.0.0</span></div>
+      </div>
+    </aside>
+    <div class="main-shell">
+      <header class="topbar"><div class="breadcrumb">Workspace <span>/</span> <strong id="breadcrumb-title">Overview</strong></div><div class="topbar-actions"><span class="local-badge"><i></i> LOCAL MODE</span><span class="top-divider"></span><button class="icon-button" id="help-button" aria-label="About this inspector" data-icon="help"></button><button class="profile" id="profile-button" aria-label="About Dez's Minion">DM</button></div></header>
+      <main id="main-content">
+        <div class="page-heading"><div><div class="eyebrow">FIBBAGE XL INSPECTOR</div><h1 id="page-title">Behind the bluff<span>.</span></h1><p id="page-description">A closer look at the game. All the facts, none of the guesswork.</p></div><button class="button menu-button" id="menu-toggle"><span data-icon="sliders"></span>Mod menu<kbd>F6</kbd></button></div>
+        <section class="hero" id="hero"><div class="hero-copy"><div class="hero-tag"><span></span> THE TRUTH IS IN THE FILES</div><h2>They can bluff.<br><em>You can know.</em></h2><p>Explore every truth, unpack the lies, and get<br class="desktop-break"> a little more familiar with Fibbage XL.</p><button class="hero-link" id="explore-button">Explore the answer archive <span data-icon="arrow"></span></button></div><div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="art-spark spark-one">✦</div><div class="art-spark spark-two">+</div><div class="art-dot"></div><div class="truth-ticket"><span class="ticket-star">✳</span><span>100%<small>THE TRUTH</small></span><span class="ticket-check">✓</span></div><div class="lie-ticket"><span>nice try.</span><small>THAT'S A LIE <span>×</span></small></div><div class="art-caption">A LITTLE INSIDE INFORMATION.</div></div><span class="hero-corner">F / XL</span></section>
+        <section class="stats-grid" aria-label="Archive statistics">
+          <button class="stat-card" data-go="players"><div class="stat-top">Players observed<span class="stat-icon purple" data-icon="users"></span></div><div class="stat-number" id="players-stat">0<span>/ 8</span></div><div class="stat-caption"><i class="muted-dot"></i><span id="players-caption">Awaiting a session snapshot</span></div></button>
+          <button class="stat-card" data-go="truths"><div class="stat-top">Truths uncovered<span class="stat-icon green" data-icon="check-circle"></span></div><div class="stat-number" id="truths-stat">331</div><div class="stat-caption"><span class="stat-pill">VERIFIED</span> From the game files</div></button>
+          <button class="stat-card" data-go="lies"><div class="stat-top">Lie suggestions<span class="stat-icon orange" data-icon="mask"></span></div><div class="stat-number" id="lies-stat">5,966</div><div class="stat-caption"><i class="orange-dot"></i>Built-in, not player submissions</div></button>
+          <button class="stat-card" data-go="rounds"><div class="stat-top">Game modes<span class="stat-icon blue" data-icon="layers"></span></div><div class="stat-number">2<span class="stat-number-label">round types</span></div><div class="stat-caption">Fibbage & Final Fibbage<span class="stat-arrow">↗</span></div></button>
+        </section>
+        <div id="view-content"><div class="loading-state">Opening the archive…</div></div>
+        <footer class="page-footer"><span><span data-icon="shield"></span> Local files. Local insights. No game modifications.</span><span>Made by Dez's Minion <span class="footer-star">✦</span></span></footer>
+      </main>
+    </div>
+  </div>
+  <dialog id="mod-dialog"><div class="dialog-heading"><div><span class="eyebrow">YOUR BACKSTAGE PASS</span><h2>Quick mod menu<span>.</span></h2></div><button class="icon-button" id="close-menu" aria-label="Close mod menu" data-icon="x"></button></div><div class="dialog-note"><span class="status-dot"></span>Companion controls <span>F6 to close</span></div><label class="toggle-row"><span><strong>Reveal truths</strong><small>Show correct answers in the archive</small></span><input type="checkbox" id="reveal-toggle" checked><span class="switch"></span></label><label class="toggle-row"><span><strong>Show lie suggestions</strong><small>Include the game's built-in decoys</small></span><input type="checkbox" id="suggestions-toggle" checked><span class="switch"></span></label><div class="menu-navigation"><button class="button" id="menu-players"><span data-icon="users"></span>View players</button><button class="button primary" id="menu-answers"><span data-icon="layers"></span>Browse answers</button></div><div class="menu-disclaimer">This is a local companion, not an injected game overlay. F6 works while this page has focus. Live players and their lies require an imported host snapshot.</div></dialog>
+  <dialog id="import-dialog"><div class="dialog-heading"><div><span class="eyebrow">BRING YOUR OWN SESSION</span><h2>Import a snapshot<span>.</span></h2></div><button class="icon-button" id="close-import" aria-label="Close import dialog" data-icon="x"></button></div><p class="import-description">Load an authorized host snapshot to inspect players and submitted lies. This does not connect to a live room.</p><label class="file-drop"><span data-icon="upload"></span><strong>Choose a JSON snapshot</strong><span>Stored in memory only · Up to 2 MB</span><input type="file" id="snapshot-file" accept=".json,application/json"></label><p class="schema-label">EXPECTED FORMAT</p><pre>{
+  "players": [
+    {"id": "1", "name": "Dez", "score": 1000,
+     "connected": true}
+  ],
+  "questionId": 14263,
+  "lies": [{"text": "mimes", "playerId": "1"}]
+}</pre><p class="import-error" id="import-error" role="alert"></p></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <script type="module" src="app.mjs"></script>
+</body>
+</html>
