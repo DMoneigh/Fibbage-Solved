@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "node server.mjs",
-    "analyze": "node scripts/analyze.mjs",
+    "analyze": "node scripts/analyze.mjs && node scripts/build-injector.mjs",
+    "build:injector": "node scripts/build-injector.mjs",
     "test": "node --test"
   }
 }

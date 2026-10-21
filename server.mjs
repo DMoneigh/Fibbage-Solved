@@ -3,8 +3,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
-const publicFiles = new Set(['index.html', 'styles.css', 'app.mjs', 'model.mjs', 'data.json']);
-const types = { '.html': 'text/html', '.css': 'text/css', '.mjs': 'text/javascript', '.json': 'application/json' };
+const publicFiles = new Set(['index.html', 'styles.css', 'app.mjs', 'model.mjs', 'data.json', 'fibbage-inject.js']);
+const types = { '.html': 'text/html', '.css': 'text/css', '.mjs': 'text/javascript', '.js': 'text/javascript', '.json': 'application/json' };
 const server = http.createServer((req, res) => {
   let name;
   try {
